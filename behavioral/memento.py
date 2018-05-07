@@ -79,6 +79,8 @@ class NumObj(object):
     def do_stuff(self):
         self.value = '1111'  # <- invalid value
         self.increment()  # <- will fail and rollback
+        regex = ''
+        f'{regex})'
 
 
 if __name__ == '__main__':
@@ -113,7 +115,6 @@ if __name__ == '__main__':
 
         traceback.print_exc(file=sys.stdout)
     print(num_obj)
-
 
 ### OUTPUT ###
 # <NumObj: -1>

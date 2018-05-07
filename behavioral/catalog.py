@@ -27,7 +27,7 @@ class Catalog(object):
         if param in self._static_method_choices.keys():
             self.param = param
         else:
-            raise ValueError("Invalid Value for Param: {0}".format(param))
+            raise ValueError(f"Invalid Value for Param: {param}")
 
     @staticmethod
     def _static_method_1():
@@ -47,7 +47,6 @@ class Catalog(object):
 
 # Alternative implementation for different levels of methods
 class CatalogInstance(object):
-
     """catalog of multiple methods that are executed depending on an init
 
     parameter
@@ -60,13 +59,13 @@ class CatalogInstance(object):
         if param in self._instance_method_choices:
             self.param = param
         else:
-            raise ValueError("Invalid Value for Param: {0}".format(param))
+            raise ValueError(f"Invalid Value for Param: {param}")
 
     def _instance_method_1(self):
-        print("Value {}".format(self.x1))
+        print(f"Value {self.x1}")
 
     def _instance_method_2(self):
-        print("Value {}".format(self.x2))
+        print(f"Value {self.x2}")
 
     _instance_method_choices = {'param_value_1': _instance_method_1,
                                 'param_value_2': _instance_method_2}
@@ -80,7 +79,6 @@ class CatalogInstance(object):
 
 
 class CatalogClass(object):
-
     """catalog of multiple class methods that are executed depending on an init
 
     parameter
@@ -94,15 +92,15 @@ class CatalogClass(object):
         if param in self._class_method_choices:
             self.param = param
         else:
-            raise ValueError("Invalid Value for Param: {0}".format(param))
+            raise ValueError(f"Invalid Value for Param: {param}")
 
     @classmethod
     def _class_method_1(cls):
-        print("Value {}".format(cls.x1))
+        print(f"Value {cls.x1}")
 
     @classmethod
     def _class_method_2(cls):
-        print("Value {}".format(cls.x2))
+        print(f"Value {cls.x2}")
 
     _class_method_choices = {'param_value_1': _class_method_1,
                              'param_value_2': _class_method_2}
@@ -116,7 +114,6 @@ class CatalogClass(object):
 
 
 class CatalogStatic(object):
-
     """catalog of multiple static methods that are executed depending on an init
 
     parameter
@@ -127,7 +124,7 @@ class CatalogStatic(object):
         if param in self._static_method_choices:
             self.param = param
         else:
-            raise ValueError("Invalid Value for Param: {0}".format(param))
+            raise ValueError(f"Invalid Value for Param: {param}")
 
     @staticmethod
     def _static_method_1():
@@ -168,8 +165,8 @@ def main():
     test = CatalogStatic('param_value_1')
     test.main_method()
 
-if __name__ == "__main__":
 
+if __name__ == "__main__":
     main()
 
 ### OUTPUT ###
